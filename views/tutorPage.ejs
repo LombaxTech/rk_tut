@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title><%= user.name %></title>
+</head>
+<body>
+    <h1><%= user.name %> Page</h1>
+    <p>Email: <%= user.email  %></p>
+    <p>Description: </p>
+    Subjects: 
+    <ul>
+        <% user.subjects.forEach(subject => {%>
+            <li><%= subject %></li>
+        <%}) %>
+    </ul>
+
+    <button>Send A Message</button>
+    <button>Book A Lesson</button>
+</body>
+</html>

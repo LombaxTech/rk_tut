@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>RK Tutors</title>
+</head>
+<body>
+    <h1>
+        HOME PAGE
+    </h1>    
+
+    <form action="/signUp" method="POST">
+        <input type="email" placeholder="email" name="email">
+        <input type="text" placeholder="name" name="name">
+        <button>Sign up</button>
+    </form>
+    <% if (typeof loggedIn != 'undefined') { %>
+         <h1> <%= loggedIn %> </h1>
+
+        <h2>Saved Tutors</h2>
+         <% tutors.forEach(tutor => { %>
+                <p><%= tutor.name  %></p>
+                <form action="/tutors/<%= tutor.email %>" method="GET">
+                    <button class="<%= tutor.email %>"> View Profile </button>
+                </form>    
+         <%})  %>
+    <%}  %>
+</body>
+</html>
